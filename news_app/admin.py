@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Category, Contact
+from .models import News, Category, Contact, Comment
 
 
 @admin.register(News)
@@ -17,3 +17,20 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact)
+
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['user', 'body', 'created_time', 'active']
+    list_filter = ['active', 'created_time']
+    search_fields = ['user', 'body']
+    actions = ['disable_comment','avtivate_comment']
+
+    def disable_comment(self, request, queryset):
+        queryset.update(active=False)
+
+    def avtivate_comment(self, request, queryset):
+        queryset.update(active=True)
+
+admin.site.register(Comment, CommentAdmin)
+

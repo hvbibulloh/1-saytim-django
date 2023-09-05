@@ -1,0 +1,11 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %} Ro'yxatdan o'tkazildi ) {% endblock title %}
+
+{% block content %}
+
+<h1>{{ new_user.first_name }} Xush kelibsiz</h1>
+    <p>FINE )))</p>
+    <p>Endi saytga kirishingiz mumkin<a href="{% url 'login' %}" style="color: #c7254e"> LOGIN</a> </p>
+
+{% endblock content %}

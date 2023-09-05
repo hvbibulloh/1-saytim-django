@@ -14,6 +14,7 @@
               <h2><a class="slider_tittle" href="{{ news.get_absolute_url }}">{{ news.title | truncatewords:5 }}</a></h2>
               <p>{{ news.title }}</p>
             </div>
+
           </div>
             {% endfor %}
         </div>
@@ -52,8 +53,9 @@
                       {% if forloop.first %}
                 <li>
                   <figure class="bsbig_fig"> <a href="{{ local.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ local.image.url }}"> <span class="overlay"></span> </a>
-                    <figcaption> <a href="{{ local.get_absolute_url }}">{{ local.title | truncatewords:5 }}</a> </figcaption>
-                    <p>{{ local.title }}</p>
+                    <figcaption> <a href="{{ local.get_absolute_url }}">{{ local.title | truncatewords:5 }} </a>  </figcaption>
+                    <p>{{ local.title }}
+                    </p>
                   </figure>
                 </li>
                       {% endif %}
@@ -69,6 +71,7 @@
                   </div>
                 </li>
                   {% endfor %}
+
               </ul>
             </div>
           </div>
